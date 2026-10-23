@@ -67,6 +67,24 @@ h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px;letter-spacing:-.3px}
 footer{background:#1f2328;color:#c9cfd6;padding:36px 0;font-size:15px}
 footer a{color:#fff}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.album{position:relative;display:block;border-radius:var(--radius);overflow:hidden;text-decoration:none;color:#fff;aspect-ratio:4/3;background:#ddd}
+.album img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.album:hover img{transform:scale(1.04)}
+.album::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.7))}
+.album-t,.album-n{position:absolute;left:14px;right:14px;z-index:1}
+.album-t{bottom:30px;font-weight:700;line-height:1.25}
+.album-n{bottom:10px;font-size:13px;opacity:.85}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,10,.94);display:flex;align-items:center;justify-content:center}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:92vw;text-align:center}
+.lb img{max-width:92vw;max-height:84vh;margin:0 auto;border-radius:6px}
+.lb figcaption{color:#ddd;font-size:15px;margin-top:10px}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;font-size:36px;line-height:1;width:52px;height:52px;border-radius:50%;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.25)}
+.lb-x{top:16px;right:16px}.lb-p{left:16px;top:50%;transform:translateY(-50%)}.lb-n{right:16px;top:50%;transform:translateY(-50%)}
+@media (max-width:900px){.albums{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.albums{grid-template-columns:1fr 1fr}.lb-p,.lb-n{top:auto;bottom:20px;transform:none}}
 @media (max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.two,.join{grid-template-columns:1fr}.events{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){nav{display:none}.cards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}section{padding:52px 0}}
 </style>
@@ -80,6 +98,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <a href="#o-nas">O nás</a>
       <a href="#akce">Akce</a>
       <a href="#kronika">Kronika</a>
+      <a href="#fotogalerie">Fotogalerie</a>
       <a href="#pridejte-se">Přidejte se</a>
     </nav>
   </div>
@@ -135,7 +154,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 <section id="kronika">
   <div class="wrap">
     <h2>Kronika</h2>
-    <p class="lead">Co jsme v posledních letech zažili. Fotky a čerstvé zprávy z akcí najdete na našem <a href="https://www.facebook.com/profile.php?id=61556632979292">Facebooku</a>.</p>
+    <p class="lead">Co jsme v posledních letech zažili. Fotky najdete níže ve <a href="#fotogalerie">fotogalerii</a>, čerstvé zprávy z akcí na našem <a href="https://www.facebook.com/profile.php?id=61556632979292">Facebooku</a>.</p>
 
     <div class="year">
       <h3>2026</h3>
@@ -186,6 +205,58 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   </div>
 </section>
 
+<section id="fotogalerie">
+  <div class="wrap">
+    <h2>Fotogalerie</h2>
+    <p class="lead">Fotky z našich akcí. Kliknutím otevřete album, listovat můžete šipkami nebo přejetím prstem.</p>
+    <div class="year"><h3>2026</h3>
+      <div class="albums">
+        <a class="album" href="img/galerie/pnk-2026/01.jpg" data-album="0"><img src="img/galerie/pnk-2026/01.jpg" alt="Prázdniny na kole – Šumava a Pootaví" loading="lazy"><span class="album-t">Prázdniny na kole – Šumava a Pootaví</span><span class="album-n">59 fotek</span></a>
+        <a class="album" href="img/galerie/potstejn/01.jpg" data-album="1"><img src="img/galerie/potstejn/01.jpg" alt="Potštejn" loading="lazy"><span class="album-t">Potštejn</span><span class="album-n">6 fotek</span></a>
+        <a class="album" href="img/galerie/arabela/01.jpg" data-album="2"><img src="img/galerie/arabela/01.jpg" alt="Peklem za Arabelou" loading="lazy"><span class="album-t">Peklem za Arabelou</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/vltava-2026/01.jpg" data-album="3"><img src="img/galerie/vltava-2026/01.jpg" alt="Víkend na Vltavě" loading="lazy"><span class="album-t">Víkend na Vltavě</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/madarsko-2026/01.jpg" data-album="4"><img src="img/galerie/madarsko-2026/01.jpg" alt="Maďarsko a kousek Slovenska" loading="lazy"><span class="album-t">Maďarsko a kousek Slovenska</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/jaro-2026/01.jpg" data-album="5"><img src="img/galerie/jaro-2026/01.jpg" alt="Jarní cykloakce" loading="lazy"><span class="album-t">Jarní cykloakce</span><span class="album-n">4 fotky</span></a>
+        <a class="album" href="img/galerie/kunka/01.jpg" data-album="6"><img src="img/galerie/kunka/01.jpg" alt="Okolo Kuňky" loading="lazy"><span class="album-t">Okolo Kuňky</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/zahajeni-2026/01.jpg" data-album="7"><img src="img/galerie/zahajeni-2026/01.jpg" alt="Zahájení sezóny v Kotoru" loading="lazy"><span class="album-t">Zahájení sezóny v Kotoru</span><span class="album-n">1 fotka</span></a>
+      </div>
+    </div>
+    <div class="year"><h3>2025</h3>
+      <div class="albums">
+        <a class="album" href="img/galerie/stepanska-2025/01.jpg" data-album="8"><img src="img/galerie/stepanska-2025/01.jpg" alt="Štěpánská vycházka" loading="lazy"><span class="album-t">Štěpánská vycházka</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/schuze-podzim-2025/01.jpg" data-album="9"><img src="img/galerie/schuze-podzim-2025/01.jpg" alt="Podzimní schůze" loading="lazy"><span class="album-t">Podzimní schůze</span><span class="album-n">1 fotka</span></a>
+        <a class="album" href="img/galerie/praha-2025/01.jpg" data-album="10"><img src="img/galerie/praha-2025/01.jpg" alt="Podzimní Praha" loading="lazy"><span class="album-t">Podzimní Praha</span><span class="album-n">1 fotka</span></a>
+        <a class="album" href="img/galerie/malinsky-kren/01.jpg" data-album="11"><img src="img/galerie/malinsky-kren/01.jpg" alt="Malínský křen" loading="lazy"><span class="album-t">Malínský křen</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/pnk-2025/01.jpg" data-album="12"><img src="img/galerie/pnk-2025/01.jpg" alt="Prázdniny na kole – Vysočina a jižní Morava" loading="lazy"><span class="album-t">Prázdniny na kole – Vysočina a jižní Morava</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/telc/01.jpg" data-album="13"><img src="img/galerie/telc/01.jpg" alt="Rodinný víkend u Telče" loading="lazy"><span class="album-t">Rodinný víkend u Telče</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/rosicka/01.jpg" data-album="14"><img src="img/galerie/rosicka/01.jpg" alt="Na kole na Rosičku" loading="lazy"><span class="album-t">Na kole na Rosičku</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/luznice/01.jpg" data-album="15"><img src="img/galerie/luznice/01.jpg" alt="Lužnice u Soběslavi" loading="lazy"><span class="album-t">Lužnice u Soběslavi</span><span class="album-n">10 fotek</span></a>
+        <a class="album" href="img/galerie/voderadske-buciny/01.jpg" data-album="16"><img src="img/galerie/voderadske-buciny/01.jpg" alt="Voděradské bučiny" loading="lazy"><span class="album-t">Voděradské bučiny</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/veprikov/01.jpg" data-album="17"><img src="img/galerie/veprikov/01.jpg" alt="Vepříkov" loading="lazy"><span class="album-t">Vepříkov</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/jeskyne-a-brody/01.jpg" data-album="18"><img src="img/galerie/jeskyne-a-brody/01.jpg" alt="Jeskyně a brody na okrese" loading="lazy"><span class="album-t">Jeskyně a brody na okrese</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/zahajeni-2025/01.jpg" data-album="19"><img src="img/galerie/zahajeni-2025/01.jpg" alt="20. zahájení turistické sezóny" loading="lazy"><span class="album-t">20. zahájení turistické sezóny</span><span class="album-n">1 fotka</span></a>
+      </div>
+    </div>
+    <div class="year"><h3>2024</h3>
+      <div class="albums">
+        <a class="album" href="img/galerie/stepanska-2024/01.jpg" data-album="20"><img src="img/galerie/stepanska-2024/01.jpg" alt="Štěpánská vycházka" loading="lazy"><span class="album-t">Štěpánská vycházka</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/breclav/01.jpg" data-album="21"><img src="img/galerie/breclav/01.jpg" alt="Břeclav a okolí" loading="lazy"><span class="album-t">Břeclav a okolí</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/recko-albanie/01.jpg" data-album="22"><img src="img/galerie/recko-albanie/01.jpg" alt="Řecko a Albánie" loading="lazy"><span class="album-t">Řecko a Albánie</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/pnk-2024/01.jpg" data-album="23"><img src="img/galerie/pnk-2024/01.jpg" alt="40. ročník Prázdnin na kole" loading="lazy"><span class="album-t">40. ročník Prázdnin na kole</span><span class="album-n">19 fotek</span></a>
+        <a class="album" href="img/galerie/otava/01.jpg" data-album="24"><img src="img/galerie/otava/01.jpg" alt="Otava" loading="lazy"><span class="album-t">Otava</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/peprove-hory/01.jpg" data-album="25"><img src="img/galerie/peprove-hory/01.jpg" alt="Pepřové hory u Egeru" loading="lazy"><span class="album-t">Pepřové hory u Egeru</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/na-vinici/01.jpg" data-album="26"><img src="img/galerie/na-vinici/01.jpg" alt="Na Vinici bez vinice" loading="lazy"><span class="album-t">Na Vinici bez vinice</span><span class="album-n">6 fotek</span></a>
+        <a class="album" href="img/galerie/zahajeni-2024/01.jpg" data-album="27"><img src="img/galerie/zahajeni-2024/01.jpg" alt="Zahájení turistické sezóny" loading="lazy"><span class="album-t">Zahájení turistické sezóny</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/schuze-jaro-2024/01.jpg" data-album="28"><img src="img/galerie/schuze-jaro-2024/01.jpg" alt="Jarní schůze" loading="lazy"><span class="album-t">Jarní schůze</span><span class="album-n">5 fotek</span></a>
+        <a class="album" href="img/galerie/hrabetice/01.jpg" data-album="29"><img src="img/galerie/hrabetice/01.jpg" alt="Na běžkách v Hraběticích" loading="lazy"><span class="album-t">Na běžkách v Hraběticích</span><span class="album-n">4 fotky</span></a>
+        <a class="album" href="img/galerie/janske-lazne/01.jpg" data-album="30"><img src="img/galerie/janske-lazne/01.jpg" alt="Janské Lázně" loading="lazy"><span class="album-t">Janské Lázně</span><span class="album-n">5 fotek</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lb" id="lb" hidden><button class="lb-x" aria-label="Zavřít">×</button><button class="lb-p" aria-label="Předchozí">‹</button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-n" aria-label="Další">›</button></div>
+
 <section id="pridejte-se" class="soft">
   <div class="wrap join">
     <div>
@@ -213,5 +284,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   </div>
 </footer>
 
+<script>
+const ALBA=[{"t": "Prázdniny na kole – Šumava a Pootaví", "y": 2026, "p": ["img/galerie/pnk-2026/01.jpg", "img/galerie/pnk-2026/02.jpg", "img/galerie/pnk-2026/03.jpg", "img/galerie/pnk-2026/04.jpg", "img/galerie/pnk-2026/05.jpg", "img/galerie/pnk-2026/06.jpg", "img/galerie/pnk-2026/07.jpg", "img/galerie/pnk-2026/08.jpg", "img/galerie/pnk-2026/09.jpg", "img/galerie/pnk-2026/10.jpg", "img/galerie/pnk-2026/11.jpg", "img/galerie/pnk-2026/12.jpg", "img/galerie/pnk-2026/13.jpg", "img/galerie/pnk-2026/14.jpg", "img/galerie/pnk-2026/15.jpg", "img/galerie/pnk-2026/16.jpg", "img/galerie/pnk-2026/17.jpg", "img/galerie/pnk-2026/18.jpg", "img/galerie/pnk-2026/19.jpg", "img/galerie/pnk-2026/20.jpg", "img/galerie/pnk-2026/21.jpg", "img/galerie/pnk-2026/22.jpg", "img/galerie/pnk-2026/23.jpg", "img/galerie/pnk-2026/24.jpg", "img/galerie/pnk-2026/25.jpg", "img/galerie/pnk-2026/26.jpg", "img/galerie/pnk-2026/27.jpg", "img/galerie/pnk-2026/28.jpg", "img/galerie/pnk-2026/29.jpg", "img/galerie/pnk-2026/30.jpg", "img/galerie/pnk-2026/31.jpg", "img/galerie/pnk-2026/32.jpg", "img/galerie/pnk-2026/33.jpg", "img/galerie/pnk-2026/34.jpg", "img/galerie/pnk-2026/35.jpg", "img/galerie/pnk-2026/36.jpg", "img/galerie/pnk-2026/37.jpg", "img/galerie/pnk-2026/38.jpg", "img/galerie/pnk-2026/39.jpg", "img/galerie/pnk-2026/40.jpg", "img/galerie/pnk-2026/41.jpg", "img/galerie/pnk-2026/42.jpg", "img/galerie/pnk-2026/43.jpg", "img/galerie/pnk-2026/44.jpg", "img/galerie/pnk-2026/45.jpg", "img/galerie/pnk-2026/46.jpg", "img/galerie/pnk-2026/47.jpg", "img/galerie/pnk-2026/48.jpg", "img/galerie/pnk-2026/49.jpg", "img/galerie/pnk-2026/50.jpg", "img/galerie/pnk-2026/51.jpg", "img/galerie/pnk-2026/52.jpg", "img/galerie/pnk-2026/53.jpg", "img/galerie/pnk-2026/54.jpg", "img/galerie/pnk-2026/55.jpg", "img/galerie/pnk-2026/56.jpg", "img/galerie/pnk-2026/57.jpg", "img/galerie/pnk-2026/58.jpg", "img/galerie/pnk-2026/59.jpg"]}, {"t": "Potštejn", "y": 2026, "p": ["img/galerie/potstejn/01.jpg", "img/galerie/potstejn/02.jpg", "img/galerie/potstejn/03.jpg", "img/galerie/potstejn/04.jpg", "img/galerie/potstejn/05.jpg", "img/galerie/potstejn/06.jpg"]}, {"t": "Peklem za Arabelou", "y": 2026, "p": ["img/galerie/arabela/01.jpg", "img/galerie/arabela/02.jpg", "img/galerie/arabela/03.jpg", "img/galerie/arabela/04.jpg", "img/galerie/arabela/05.jpg"]}, {"t": "Víkend na Vltavě", "y": 2026, "p": ["img/galerie/vltava-2026/01.jpg", "img/galerie/vltava-2026/02.jpg", "img/galerie/vltava-2026/03.jpg", "img/galerie/vltava-2026/04.jpg", "img/galerie/vltava-2026/05.jpg"]}, {"t": "Maďarsko a kousek Slovenska", "y": 2026, "p": ["img/galerie/madarsko-2026/01.jpg", "img/galerie/madarsko-2026/02.jpg", "img/galerie/madarsko-2026/03.jpg", "img/galerie/madarsko-2026/04.jpg", "img/galerie/madarsko-2026/05.jpg"]}, {"t": "Jarní cykloakce", "y": 2026, "p": ["img/galerie/jaro-2026/01.jpg", "img/galerie/jaro-2026/02.jpg", "img/galerie/jaro-2026/03.jpg", "img/galerie/jaro-2026/04.jpg"]}, {"t": "Okolo Kuňky", "y": 2026, "p": ["img/galerie/kunka/01.jpg", "img/galerie/kunka/02.jpg", "img/galerie/kunka/03.jpg", "img/galerie/kunka/04.jpg", "img/galerie/kunka/05.jpg"]}, {"t": "Zahájení sezóny v Kotoru", "y": 2026, "p": ["img/galerie/zahajeni-2026/01.jpg"]}, {"t": "Štěpánská vycházka", "y": 2025, "p": ["img/galerie/stepanska-2025/01.jpg", "img/galerie/stepanska-2025/02.jpg", "img/galerie/stepanska-2025/03.jpg", "img/galerie/stepanska-2025/04.jpg", "img/galerie/stepanska-2025/05.jpg"]}, {"t": "Podzimní schůze", "y": 2025, "p": ["img/galerie/schuze-podzim-2025/01.jpg"]}, {"t": "Podzimní Praha", "y": 2025, "p": ["img/galerie/praha-2025/01.jpg"]}, {"t": "Malínský křen", "y": 2025, "p": ["img/galerie/malinsky-kren/01.jpg", "img/galerie/malinsky-kren/02.jpg", "img/galerie/malinsky-kren/03.jpg", "img/galerie/malinsky-kren/04.jpg", "img/galerie/malinsky-kren/05.jpg"]}, {"t": "Prázdniny na kole – Vysočina a jižní Morava", "y": 2025, "p": ["img/galerie/pnk-2025/01.jpg", "img/galerie/pnk-2025/02.jpg", "img/galerie/pnk-2025/03.jpg", "img/galerie/pnk-2025/04.jpg", "img/galerie/pnk-2025/05.jpg"]}, {"t": "Rodinný víkend u Telče", "y": 2025, "p": ["img/galerie/telc/01.jpg", "img/galerie/telc/02.jpg", "img/galerie/telc/03.jpg", "img/galerie/telc/04.jpg", "img/galerie/telc/05.jpg"]}, {"t": "Na kole na Rosičku", "y": 2025, "p": ["img/galerie/rosicka/01.jpg", "img/galerie/rosicka/02.jpg", "img/galerie/rosicka/03.jpg", "img/galerie/rosicka/04.jpg", "img/galerie/rosicka/05.jpg"]}, {"t": "Lužnice u Soběslavi", "y": 2025, "p": ["img/galerie/luznice/01.jpg", "img/galerie/luznice/02.jpg", "img/galerie/luznice/03.jpg", "img/galerie/luznice/04.jpg", "img/galerie/luznice/05.jpg", "img/galerie/luznice/06.jpg", "img/galerie/luznice/07.jpg", "img/galerie/luznice/08.jpg", "img/galerie/luznice/09.jpg", "img/galerie/luznice/10.jpg"]}, {"t": "Voděradské bučiny", "y": 2025, "p": ["img/galerie/voderadske-buciny/01.jpg", "img/galerie/voderadske-buciny/02.jpg", "img/galerie/voderadske-buciny/03.jpg", "img/galerie/voderadske-buciny/04.jpg", "img/galerie/voderadske-buciny/05.jpg"]}, {"t": "Vepříkov", "y": 2025, "p": ["img/galerie/veprikov/01.jpg", "img/galerie/veprikov/02.jpg", "img/galerie/veprikov/03.jpg", "img/galerie/veprikov/04.jpg", "img/galerie/veprikov/05.jpg"]}, {"t": "Jeskyně a brody na okrese", "y": 2025, "p": ["img/galerie/jeskyne-a-brody/01.jpg", "img/galerie/jeskyne-a-brody/02.jpg", "img/galerie/jeskyne-a-brody/03.jpg", "img/galerie/jeskyne-a-brody/04.jpg", "img/galerie/jeskyne-a-brody/05.jpg"]}, {"t": "20. zahájení turistické sezóny", "y": 2025, "p": ["img/galerie/zahajeni-2025/01.jpg"]}, {"t": "Štěpánská vycházka", "y": 2024, "p": ["img/galerie/stepanska-2024/01.jpg", "img/galerie/stepanska-2024/02.jpg", "img/galerie/stepanska-2024/03.jpg", "img/galerie/stepanska-2024/04.jpg", "img/galerie/stepanska-2024/05.jpg"]}, {"t": "Břeclav a okolí", "y": 2024, "p": ["img/galerie/breclav/01.jpg", "img/galerie/breclav/02.jpg", "img/galerie/breclav/03.jpg", "img/galerie/breclav/04.jpg", "img/galerie/breclav/05.jpg"]}, {"t": "Řecko a Albánie", "y": 2024, "p": ["img/galerie/recko-albanie/01.jpg", "img/galerie/recko-albanie/02.jpg", "img/galerie/recko-albanie/03.jpg", "img/galerie/recko-albanie/04.jpg", "img/galerie/recko-albanie/05.jpg"]}, {"t": "40. ročník Prázdnin na kole", "y": 2024, "p": ["img/galerie/pnk-2024/01.jpg", "img/galerie/pnk-2024/02.jpg", "img/galerie/pnk-2024/03.jpg", "img/galerie/pnk-2024/04.jpg", "img/galerie/pnk-2024/05.jpg", "img/galerie/pnk-2024/06.jpg", "img/galerie/pnk-2024/07.jpg", "img/galerie/pnk-2024/08.jpg", "img/galerie/pnk-2024/09.jpg", "img/galerie/pnk-2024/10.jpg", "img/galerie/pnk-2024/11.jpg", "img/galerie/pnk-2024/12.jpg", "img/galerie/pnk-2024/13.jpg", "img/galerie/pnk-2024/14.jpg", "img/galerie/pnk-2024/15.jpg", "img/galerie/pnk-2024/16.jpg", "img/galerie/pnk-2024/17.jpg", "img/galerie/pnk-2024/18.jpg", "img/galerie/pnk-2024/19.jpg"]}, {"t": "Otava", "y": 2024, "p": ["img/galerie/otava/01.jpg", "img/galerie/otava/02.jpg", "img/galerie/otava/03.jpg", "img/galerie/otava/04.jpg", "img/galerie/otava/05.jpg"]}, {"t": "Pepřové hory u Egeru", "y": 2024, "p": ["img/galerie/peprove-hory/01.jpg", "img/galerie/peprove-hory/02.jpg", "img/galerie/peprove-hory/03.jpg", "img/galerie/peprove-hory/04.jpg", "img/galerie/peprove-hory/05.jpg"]}, {"t": "Na Vinici bez vinice", "y": 2024, "p": ["img/galerie/na-vinici/01.jpg", "img/galerie/na-vinici/02.jpg", "img/galerie/na-vinici/03.jpg", "img/galerie/na-vinici/04.jpg", "img/galerie/na-vinici/05.jpg", "img/galerie/na-vinici/06.jpg"]}, {"t": "Zahájení turistické sezóny", "y": 2024, "p": ["img/galerie/zahajeni-2024/01.jpg", "img/galerie/zahajeni-2024/02.jpg", "img/galerie/zahajeni-2024/03.jpg", "img/galerie/zahajeni-2024/04.jpg", "img/galerie/zahajeni-2024/05.jpg"]}, {"t": "Jarní schůze", "y": 2024, "p": ["img/galerie/schuze-jaro-2024/01.jpg", "img/galerie/schuze-jaro-2024/02.jpg", "img/galerie/schuze-jaro-2024/03.jpg", "img/galerie/schuze-jaro-2024/04.jpg", "img/galerie/schuze-jaro-2024/05.jpg"]}, {"t": "Na běžkách v Hraběticích", "y": 2024, "p": ["img/galerie/hrabetice/01.jpg", "img/galerie/hrabetice/02.jpg", "img/galerie/hrabetice/03.jpg", "img/galerie/hrabetice/04.jpg"]}, {"t": "Janské Lázně", "y": 2024, "p": ["img/galerie/janske-lazne/01.jpg", "img/galerie/janske-lazne/02.jpg", "img/galerie/janske-lazne/03.jpg", "img/galerie/janske-lazne/04.jpg", "img/galerie/janske-lazne/05.jpg"]}];
+(function(){const lb=document.getElementById('lb'),img=lb.querySelector('img'),cap=lb.querySelector('figcaption');let a=null,i=0,x0=null;
+function show(){const al=ALBA[a];img.src=al.p[i];img.alt=al.t+' – fotka '+(i+1);cap.textContent=al.t+' ('+al.y+') · '+(i+1)+' / '+al.p.length;const nx=new Image();nx.src=al.p[(i+1)%al.p.length];}
+function open(n){a=n;i=0;lb.hidden=false;document.body.style.overflow='hidden';show();}
+function close(){lb.hidden=true;document.body.style.overflow='';img.src='';}
+function go(d){const n=ALBA[a].p.length;i=(i+d+n)%n;show();}
+document.querySelectorAll('.album').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();open(+el.dataset.album);}));
+lb.querySelector('.lb-x').onclick=close;lb.querySelector('.lb-p').onclick=()=>go(-1);lb.querySelector('.lb-n').onclick=()=>go(1);
+lb.addEventListener('click',e=>{if(e.target===lb)close();});
+document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')go(-1);if(e.key==='ArrowRight')go(1);});
+lb.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)go(dx<0?1:-1);x0=null;});})();
+</script>
 </body>
 </html>
