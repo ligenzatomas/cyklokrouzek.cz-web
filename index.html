@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cykloturistický kroužek Kutná Hora – jezdíme pro radost</title>
+<meta name="description" content="Oddíl cykloturistů z Kutné Hory, založený v roce 1979. Jezdíme na kole, splouváme řeky, chodíme pěšky a v zimě na běžkách. Pořádáme Prázdniny na kole, Štěpánskou vycházku i zahájení turistické sezóny.">
+<meta property="og:title" content="Cykloturistický kroužek Kutná Hora">
+<meta property="og:description" content="Jezdíme pro radost – od roku 1979. Přidejte se k nám.">
+<meta property="og:image" content="https://cyklokrouzek.cz/img/uvod.jpg">
+<meta property="og:url" content="https://cyklokrouzek.cz/">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<style>
+:root{--red:#d7262e;--red-dark:#a81b22;--ink:#1f2328;--muted:#5b636b;--bg:#ffffff;--soft:#f5f3ef;--line:#e6e2db;--radius:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--red-dark)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;line-height:1.15}
+.brand img{width:44px;height:auto}
+.brand small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+nav a{color:var(--ink);text-decoration:none;font-weight:600;margin-left:18px;font-size:15px}
+nav a:hover{color:var(--red)}
+.hero{position:relative;min-height:min(72vh,680px);display:flex;align-items:flex-end;color:#fff;background:#333 url(img/uvod.jpg) center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.65))}
+.hero .wrap{position:relative;padding-bottom:56px;padding-top:120px}
+.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.05;margin:0 0 12px;letter-spacing:-.5px}
+.hero p{font-size:clamp(18px,2.2vw,22px);max-width:640px;margin:0 0 24px}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px;margin:0 10px 10px 0}
+.btn:hover{background:var(--red-dark)}
+.btn.ghost{background:rgba(255,255,255,.15);border:2px solid #fff}
+section{padding:72px 0}
+section.soft{background:var(--soft)}
+h2{font-size:clamp(28px,4vw,40px);margin:0 0 8px;letter-spacing:-.3px}
+.lead{color:var(--muted);font-size:19px;max-width:760px;margin:0 0 36px}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.two img{border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:24px}
+.facts div{font-size:15px;color:var(--muted)}
+.facts strong{display:block;font-size:32px;color:var(--red);line-height:1.1}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card .ico{font-size:30px}
+.card h3{margin:8px 0 6px;font-size:20px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.card a{font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.tags span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-weight:600;font-size:15px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.gallery figure{margin:0}
+.gallery img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%}
+.gallery figcaption{font-size:14px;color:var(--muted);margin-top:6px}
+.year{margin-top:40px}
+.year h3{font-size:24px;margin:0 0 14px;padding-bottom:6px;border-bottom:3px solid var(--red);display:inline-block}
+.events{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px}
+.events li{padding-left:16px;border-left:3px solid var(--line)}
+.events b{display:block}
+.events span{color:var(--muted);font-size:15px}
+.join{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.contact{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.contact p{margin:6px 0}
+footer{background:#1f2328;color:#c9cfd6;padding:36px 0;font-size:15px}
+footer a{color:#fff}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (max-width:900px){.cards{grid-template-columns:repeat(2,1fr)}.two,.join{grid-template-columns:1fr}.events{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){nav{display:none}.cards{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}section{padding:52px 0}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="img/logo.png" alt="Logo Cykloturistického kroužku Kutná Hora"><span>Cykloturistický kroužek<small>Kutná Hora · od roku 1979</small></span></a>
+    <nav>
+      <a href="#o-nas">O nás</a>
+      <a href="#akce">Akce</a>
+      <a href="#kronika">Kronika</a>
+      <a href="#pridejte-se">Přidejte se</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" aria-label="Úvod">
+  <div class="wrap">
+    <h1>Jezdíme pro radost</h1>
+    <p>Oddíl cykloturistů z Kutné Hory. Na kole, na vodě, pěšky i na běžkách – už od roku 1979.</p>
+    <a class="btn" href="#pridejte-se">Přidejte se k nám</a>
+    <a class="btn ghost" href="https://www.prazdninynakole.cz/">Prázdniny na kole</a>
+  </div>
+</section>
+
+<section id="o-nas">
+  <div class="wrap two">
+    <div>
+      <h2>O nás</h2>
+      <p>Jsme oddíl cykloturistů z Kutné Hory, který v roce 1979 založil Jaromír Krtička. Dnes nás vedou manželé Lenka a Lukáš Podolákovi. Jezdíme na kole, splouváme řeky na nafukovacích lodích, chodíme po krásách naší vlasti a v zimě se z nás stávají přátelé bílé stopy.</p>
+      <p>Během roku pořádáme jednodenní i vícedenní akce – pro členy oddílu a jejich rodiny i pro širokou veřejnost. Sejde se u nás parta od předškoláků až po aktivní důchodce a platí jediné pravidlo: <strong>kolo sbližuje</strong>.</p>
+      <div class="facts">
+        <div><strong>1979</strong>založení oddílu</div>
+        <div><strong>40+</strong>ročníků Prázdnin na kole</div>
+        <div><strong>4</strong>stěžejní akce ročně</div>
+      </div>
+    </div>
+    <img src="img/pnk-2023-parta.jpg" alt="Skupina cyklistů v jednotných tričkách na hrázi přehrady" loading="lazy">
+  </div>
+</section>
+
+<section id="akce" class="soft">
+  <div class="wrap">
+    <h2>Naše stěžejní akce</h2>
+    <p class="lead">Každý rok se opakují čtyři akce, na které se těšíme nejvíc. Všechny jsou otevřené i pro veřejnost.</p>
+    <div class="cards">
+      <div class="card"><div class="ico">🚲</div><h3>Prázdniny na kole</h3><p>Týdenní putování na kolech s lidmi z celé republiky – každý rok jinou krajinou, s přejezdy mezi ubytováními. Pořádáme ho už přes 40 let. <a href="https://www.prazdninynakole.cz/">Podrobnosti&nbsp;→</a></p></div>
+      <div class="card"><div class="ico">🌸</div><h3>Zahájení turistické sezóny</h3><p>Jarní procházka po Kutné Hoře a okolí s odborným výkladem, vhodná pro všechny – od miminek v kočárku po zdatné osmdesátníky.</p></div>
+      <div class="card"><div class="ico">⛷️</div><h3>Lyžařské zájezdy</h3><p>Zimní výjezdy na běžky, třeba do Janských Lázní, pro členy oddílu i širokou veřejnost.</p></div>
+      <div class="card"><div class="ico">🎄</div><h3>Štěpánská vycházka</h3><p>Sváteční procházka, která každý rok vytáhne od stolu 60–70 milovníků turistiky – ani mráz je neodradí.</p></div>
+    </div>
+    <h3 style="margin:44px 0 6px">A k tomu po celý rok</h3>
+    <div class="tags">
+      <span>🚴 jednodenní cykloakce</span><span>🛶 vodácké víkendy – Lužnice, Otava, Vltava</span><span>🥾 pěší výlety</span><span>🌍 zahraniční zájezdy – Maďarsko, Řecko a Albánie</span><span>🎒 bikepacking</span><span>🏊 aquapark a společné večery</span>
+    </div>
+    <div class="gallery">
+      <figure><img src="img/uvod.jpg" alt="Cyklisté na polní cestě v jarní krajině" loading="lazy"><figcaption>Jarní vyjížďka</figcaption></figure>
+      <figure><img src="img/necpaly.jpg" alt="Pět cykloturistů na velké houpačce s nápisem Necpaly" loading="lazy"><figcaption>Necpaly na Slovensku</figcaption></figure>
+      <figure><img src="img/pnk-2023-odpocinek.jpg" alt="Účastníci Prázdnin na kole 2023 v modrých tričkách odpočívají u stolu v lese" loading="lazy"><figcaption>Prázdniny na kole 2023</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="kronika">
+  <div class="wrap">
+    <h2>Kronika</h2>
+    <p class="lead">Co jsme v posledních letech zažili. Fotky a čerstvé zprávy z akcí najdete na našem <a href="https://www.facebook.com/profile.php?id=61556632979292">Facebooku</a>.</p>
+
+    <div class="year">
+      <h3>2026</h3>
+      <ul class="events">
+        <li><b>Prázdniny na kole – Šumava a Pootaví</b><span>Sušice, hrad Velhartice, Kvilda, Modrava a soutok Vydry s Křemelnou, Volyně, Vlachovo Březí, Strakonice, Písek, Protivín a nakonec Zvíkov. Na závěr supervečer v Písku.</span></li>
+        <li><b>Potštejn</b><span>Víkend v kempu pod Potštejnem, kde se sešly pěší rodiny i cykloturisté.</span></li>
+        <li><b>Peklem za Arabelou</b><span>Sobotní cykloakce 13. června, i s terénní zkratkou, po které leckteré kolo připomínalo bahenní strašidlo.</span></li>
+        <li><b>Víkend na Vltavě</b><span>6.–7. června: kemp, počasí, lidé i hladina řeky – všechno perfektní.</span></li>
+        <li><b>Maďarsko a kousek Slovenska</b><span>První letošní zájezd na kole do zahraničí.</span></li>
+        <li><b>Okolo Kuňky</b><span>Z Pardubic přes Kunětickou horu, Sezemice a Bohdaneč až do Přelouče – 80 km na zahájení cyklosezóny.</span></li>
+        <li><b>Zahájení sezóny v Kotoru</b><span>Plány akcí na rok 2026, vzpomínky na zimní akce a přátelský večer.</span></li>
+      </ul>
+    </div>
+
+    <div class="year">
+      <h3>2025</h3>
+      <ul class="events">
+        <li><b>Štěpánská vycházka</b><span>Přibližně 60 účastníků navzdory mrazivému počasí.</span></li>
+        <li><b>Podzimní schůze a aquapark Kolín</b><span>Schůze 22. listopadu v Kotoru, pak plavky s sebou a hurá do Kolína.</span></li>
+        <li><b>Podzimní Praha</b><span>Procházka z Kyjí přes Čihadla k rozhledně Doubravka.</span></li>
+        <li><b>Malínský křen</b><span>11. října: Křesetice, Úmonín, Katlov, Zbraslavice, Vidlák, Malešov a zpět do Kutné Hory.</span></li>
+        <li><b>Prázdniny na kole – Vysočina a jižní Morava</b><span>Velké Meziříčí, Moravský Krumlov a Brno. Obrovská vedra hnala kola k vodě, ale týden se velice povedl.</span></li>
+        <li><b>Rodinný víkend u Telče</b><span>Základna v kempu, kam se sjeli hlavně rodiče s malými dětmi.</span></li>
+        <li><b>Na kole na Rosičku</b><span>55 km, 5 účastníků, 6 zastavení s výkladem a 2 vlaky.</span></li>
+        <li><b>Lužnice u Soběslavi</b><span>Vodácký víkend – vody dost, řeka líná, nálada skvělá.</span></li>
+        <li><b>Voděradské bučiny</b><span>Z Českého Brodu tichými bukovými lesy až do Černokosteleckého pivovaru.</span></li>
+        <li><b>Vepříkov a Stodola krásných krámů</b><span>Květnová cykloakce u Habrů.</span></li>
+        <li><b>Jeskyně a brody na okrese</b><span>První cykloakce roku – nové, neznámé cíle v okolí Kutné Hory.</span></li>
+        <li><b>20. zahájení turistické sezóny</b><span>Procházka po Bylanech s povídáním o starých domech; náš oddíl se staral o občerstvení.</span></li>
+      </ul>
+    </div>
+
+    <div class="year">
+      <h3>2024</h3>
+      <ul class="events">
+        <li><b>Štěpánská vycházka</b><span>Přes 70 účastníků a téměř jarní počasí.</span></li>
+        <li><b>Břeclav a okolí</b><span>Tradiční svatováclavský víkend – víno, burčák a 92 km.</span></li>
+        <li><b>Řecko a Albánie</b><span>Letní speciál na kole „na těžko“ a ve vedru.</span></li>
+        <li><b>40. ročník Prázdnin na kole</b><span>Start ve Štětí, výlet k Porta Bohemica a oslava na vrcholu Řípu.</span></li>
+        <li><b>Otava</b><span>Vodácký víkend 8.–9. června z Katovic k soutoku s Blanicí, zakončený u Švejka v Putimi.</span></li>
+        <li><b>Pepřové hory u Egeru</b><span>Prodloužený květnový víkend v Maďarsku s krásnými výhledy.</span></li>
+        <li><b>Na Vinici bez vinice</b><span>Chotkovská hrobka, Týnec nad Labem, kolínská vyhlídka Na Vinici, medvědi v Borkách a Práchovna.</span></li>
+        <li><b>Zahájení turistické sezóny v Kutné Hoře</b><span>Akce se vydařila na sto procent.</span></li>
+        <li><b>Jarní schůze</b><span>9. března: plán sezóny, Prázdniny na kole 2024 a zájezd do Řecka a Albánie.</span></li>
+        <li><b>Na běžkách</b><span>Deštivé Hrabětice a slunečný zájezd do Janských Lázní.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="pridejte-se" class="soft">
+  <div class="wrap join">
+    <div>
+      <h2>Přidejte se</h2>
+      <p>Kdo chce, může se přidat – na jednu akci i natrvalo. Nepotřebujete závodní kolo ani kondici sportovce, stačí chuť jezdit, poznávat a užít si to s dobrou partou.</p>
+      <p>Dvakrát do roka se scházíme na oddílové schůzi v restauraci Kotor v Kutné Hoře, kde představujeme plán akcí. Pokud bydlíte v Kutné Hoře nebo okolí a zaujalo vás to, klidně přijďte mezi nás.</p>
+      <p>Termíny akcí a fotky průběžně zveřejňujeme na <a href="https://www.facebook.com/profile.php?id=61556632979292">Facebooku</a>.</p>
+    </div>
+    <div class="contact">
+      <h3 style="margin-top:0">Kontakt</h3>
+      <p><strong>Lenka a Lukáš Podolákovi</strong><br>vedoucí oddílu</p>
+      <p>📍 Kutná Hora</p>
+      <p>📞 <a href="tel:+420721681481">721 681 481</a></p>
+      <p>✉️ <a href="mailto:l.podol@seznam.cz">l.podol@seznam.cz</a></p>
+      <p>👍 <a href="https://www.facebook.com/profile.php?id=61556632979292">Cykloturistický kroužek KUTNÁ HORA</a></p>
+      <p>🚲 <a href="https://www.prazdninynakole.cz/">www.prazdninynakole.cz</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Cykloturistický kroužek Kutná Hora · zájmový oddíl Klubu českých turistů</span>
+    <span><a href="https://www.facebook.com/profile.php?id=61556632979292">Facebook</a> · <a href="https://www.prazdninynakole.cz/">Prázdniny na kole</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
